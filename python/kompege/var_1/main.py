@@ -119,3 +119,71 @@
 #     if (n <= 400): return n + 6 + F(n + 12)
 # print(F(72) - F(108))
 # answ: 270
+
+# 17
+# import pathlib
+# pathfile = str(pathlib.Path(__file__).parent) + '/17.txt'
+# f = open(pathfile)
+# data = [int(x) for x in f]
+
+# def check(glist):
+#     if (glist[0] % 77 + glist[1] % 77 == min(data)):
+#         return True
+#     return False
+
+# result = []
+# count = 0
+# for x in data:
+#     if (count < len(data) - 1):
+#         if (check([data[count], data[count+1]])):
+#             result.append(sum([data[count], data[count+1]]))
+#     count += 1
+# print(len(result), max(result))
+# 35 186613
+
+# 18 скипаем
+
+# 19 answ: 25
+# 20 answ: 13 23
+# 21 answ: 21
+
+# 22 скипаем
+
+# 23
+# def f(n, b):
+#     if (n > b): return 0
+#     if (n == 22): return 0
+#     if (n == b): return 1
+#     return f(n+3, b) + f(n+4, b)
+# print(f(16, 38))
+# answ: 16
+
+# 24
+# import pathlib
+# filename = str(pathlib.Path(__file__).parent) + '/24.txt'
+# f = open(filename).read()
+# len_f = len(f) - 1
+# result = []
+# count = 0
+# count_len = 0
+# for i in f:
+#     if (count < len_f):
+#         if ((i == '+' or i == '*') and (f[count+1] == '+' or f[count+1] == '*')):
+#             result.append(count_len)
+#             count_len = 0
+#         else:
+#             count_len += 1
+#         count += 1
+# print(max(result))
+# answ: 190
+
+# 25
+import fnmatch
+def check(n):
+    if fnmatch.fnmatch(str(n), '21?3*145?5'):
+        return True
+    return False
+
+for i in range(0, 10**10 + 1, 2025):
+    if (check(i)):
+        print(f"{i} | {i/2025}")
