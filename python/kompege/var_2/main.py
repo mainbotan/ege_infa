@@ -18,7 +18,7 @@ root = str(pathlib.Path(__file__).parent)
 #                     print(f"{w} {x} {y} {z} | {f}")
 # answ: xywz
 
-# 3 скипаем
+# 3 2801
 # 4 10001
 
 # 5
@@ -52,8 +52,8 @@ root = str(pathlib.Path(__file__).parent)
 # print(count)
 # answ: 7500
 
-# 9 скипаем
-# 10 скипаем
+# 9 answ: 13
+# 10 answ: 29
 
 # 11
 # a = (20 * 2**13) / (6*12 + 28*2**3)
@@ -109,8 +109,78 @@ root = str(pathlib.Path(__file__).parent)
 # answ: 22
 
 # 16
+# from functools import lru_cache
+# @lru_cache(maxsize=None)
 # def F(n):
 #     if (n < 5): return 4**4
 #     if (n > 4):
 #         return 4 * F(n - 4) + 4
 # print(F(4048))
+# answ: разобраться в этой хуйне
+
+
+# 17
+# f = open(root+'/17.txt', 'r')
+# data = [int(x) for x in f]
+# len_goal = len([z for z in data if z>9 and z<100])
+# def check(arr):
+#     if (int(str(arr[0])[-1]) + int(str(arr[1])[-1]) == len_goal):
+#         return True
+#     return False
+# result = []
+# count = 0
+# for i in data:
+#     if (count < len(data) - 1):
+#         if (check([i, data[count+1]])):
+#             result.append(i + data[count+1])
+#     count += 1
+# print(len(result), min(result))
+# answ: 243 3614
+
+# 18 скипаем
+# 19 answ: 36
+# 20 answ: 39 77
+# 21 answ: 80
+# 22 скипаем
+
+# 23
+# def f(n, g):
+#     if (n == 24): return 0
+#     if (n < g): return 0
+#     if (n == g): return 1
+#     return f(n-2, g) + f(n-3, g) + f(n//4, g)
+# print(f(36, 13))
+# answ: 157
+
+# 24
+# data = open(root+'/24.txt').read().split('X')
+# max = 0
+# for i in data:
+#     lenI = str(i).count('Y')
+#     if (lenI > max):
+#         max = lenI
+#         res = str(i)
+# answ: 91
+
+# 25
+# def getSumDivisors(n):
+#     res = sum([int(x) for x in range(1, n+1) if n%x==0])
+#     return res
+# for i in range(1000, 10000):
+#     S = getSumDivisors(i)
+#     if (str(S)[-2:] == '23'):
+#         print(f"{i} | {S}")
+# answ: 
+# 1681 | 1723
+# 1936 | 4123
+# 2592 | 7623
+# 3025 | 4123
+# 6962 | 10623
+# 7569 | 11323
+
+# 26
+data = [int(x) for x in open(root+'/26.txt', 'r')]
+total_count = data[0]
+del data[0]
+data = sorted(data)
+print(data)
