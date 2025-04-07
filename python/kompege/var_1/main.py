@@ -178,12 +178,36 @@
 # answ: 190
 
 # 25
-import fnmatch
-def check(n):
-    if fnmatch.fnmatch(str(n), '21?3*145?5'):
-        return True
-    return False
+# import fnmatch
+# def check(n):
+#     if fnmatch.fnmatch(str(n), '21?3*145?5'):
+#         return True
+#     return False
 
-for i in range(0, 10**10 + 1, 2025):
-    if (check(i)):
-        print(f"{i} | {i/2025}")
+# for i in range(0, 10**10 + 1, 2025):
+#     if (check(i)):
+#         print(f"{i} | {i/2025}")
+# answ: 
+# 2123214525 1048501
+# 2163714525 1068501
+# 2173114575 1073143
+
+# 26
+# import pathlib
+# filename = str(pathlib.Path(__file__).parent) + '/26.txt'
+# f = open(filename, "r").read().split('\n')
+# input_data = f[0].split(' ')
+# total_count = int(input_data[0])
+# max_weight = int(input_data[1])*1000
+# f.pop(0)
+# data = [int(x) for x in f if int(x) >= 7000 and int(x) <= 12000]
+# data = sorted(data, reverse=True)
+# print(total_count, max_weight)
+# res = []
+# for i in data:
+#     if (i <= max_weight):
+#         res.append(i)
+#         max_weight -= i
+# print(sum(res))
+# print(len(res), min(res))
+# answ: 75 9196
